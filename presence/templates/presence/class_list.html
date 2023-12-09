@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container my-5">
+    <a href="{% url 'presence:join-class' %}" class="btn btn-primary">Join Pleton</a>
+    <a href="{% url 'presence:landing' %}" class="btn btn-secondary">Back To Home</a>
+    <div class="table-responsive my-3">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nama Kelas</th>
+                <th scope="col">PJ Cofass</th>
+                <th scope="col">Mentorship Pleton</th>
+                <th scope="col">Recaps</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for class in classes %}
+            <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td>{{ class }}</td>
+                <td>{{ class.creator }}</td>
+                <td>
+                    {% for pr in class.pr.all %}
+                    {{ pr }} <br>
+                    {% endfor %}
+                </td>
+                <td>
+                    <a href="{% url 'presence:my-presence-recap' class.link %}" class="btn btn-primary mt-0 mx-1 mb-1">Presence Recaps</a>
+                </td>
+
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

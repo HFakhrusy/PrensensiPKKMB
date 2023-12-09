@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container-fluid my-5">
+    <div class="row mx-auto align-items-center justify-content-center">
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Pleton Saya</h5>
+                    <h6 class="card-subtitle">Seluruh Pleton yang Saya Buat / Sebagai asisten</h6>
+                    <p class="card-text">{{ class }} Pleton</p>
+                    <a href="{% url 'assist:my-class-list' %}" class="btn btn-primary col">Lihat Pleton</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Total Mahasiswa</h5>
+                    <h6 class="card-subtitle">Seluruh mahasiswa yang sudah terdaftar</h6>
+                    <p class="card-text">{{ student.count }} Mahasiswa </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Buat Pleton</h5>
+                    <p class="card-text">Buat Pleton baru</p>
+                    <a href="{% url 'assist:create-class' %}" class="btn btn-primary col">Buat Pleton</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Join Panitia Pleton</h5>
+                    <p class="card-text">Masuk Sebagai panitia Pleton agar kamu dapat privilege khusus</p>
+                    <a href="{% url 'assist:join-class' %}" class="btn btn-primary col">Join Pleton</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Ubah Username</h5>
+                    <a href="{% url 'assist:change-username' %}" class="btn btn-primary col">Proses</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Generate Token untuk Ubah password</h5>
+                    <a href="{% url 'assist:generate-token' %}" class="btn btn-primary col">Proses</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Finder</h5>
+                    <p class="card-text">Finder ini berguna untuk mencari data mahasiswa yang terdata di sistem, cari berdasarkan username atau menggunakan nim mahasiswa tersebut</p>
+                    <a href="{% url 'assist:finder' %}" class="btn btn-primary col">Proses</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Download Today's Present</h5>
+                    <p class="card-text">Fitur ini digunakan untuk mengunduh seluruh data presensi yang ada</p>
+                    <a href="{% url 'assist:today-present' %}" class="btn btn-primary col">Proses</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Pendataan Kost Terdekat</h5>
+                    <p class="card-text">Fitur ini digunakan untuk mendata kost terdekat dari kampus ITPLN</p>
+                    <div class="row">
+                        <div class="col">
+                            <a href="{% url 'assist:create-boarding' %}" class="btn btn-primary col">Data Sekarang</a>
+                        </div>
+                        <div class="col">
+                            <a href="{% url 'assist:boarding-list' %}" class="btn btn-primary col">Data Kost</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

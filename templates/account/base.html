@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %}
+<html class="dark">
+	<!-- BEGIN: Head -->
+	<head>
+		<meta charset="utf-8" />
+		<link href="{% static 'user/images/karisma.png' %}" rel="shortcut icon" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="{% static 'user/midone/css/app.css' %}" />
+        <link rel="stylesheet" href="{% static 'user/css/login_template.css'  %}">
+        <title>Renaissance - {% block head_title %}{% endblock %}</title>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-C9658TXYYW"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+
+            gtag('js', new Date());
+
+            gtag('config', 'G-C9658TXYYW');
+        </script>
+        {% block extra_head %}
+        {% endblock %}
+	</head>
+
+	<body class="login bg-cyan-600">
+        {% block body %}
+
+            {% block content %}
+            {% endblock %}
+        {% endblock %}
+
+        {% block extra_body %}
+        {% endblock %}
+	</body>
+</html>
+
